@@ -29,7 +29,7 @@ php update-new.php > /home/vufind/logs/update-new.log
 
 # End Delete process
 cd /usr/local/vufind/harvest
-/home/vufind/scripts/harvest_from_lat.sh > /home/vufind/logs/harvest.log 2>&1
+/home/vufind/scripts/harvest_from_lat.sh > /home/vufind/logs/vufind_full_harvest.log 2>&1
 rm -Rf /usr/local/vufind/local/harvest/ELARALL/*.log
 
 #Create alphabetic browse index
