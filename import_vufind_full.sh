@@ -25,11 +25,11 @@ find  /usr/local/vufind/local/harvest/ELARALL/ -name '*.xml' -exec rm {} \;
 cd /usr/local/vufind/harvest
 /usr/bin/php harvest_oai.php ELARALL
 cd /usr/local/vufind/update
-php update-new.php > update-new.log
+php update-new.php > /home/vufind/logs/update-new.log
 
 # End Delete process
 cd /usr/local/vufind/harvest
-/usr/local/vufind/harvest_from_lat > /usr/local/vufind/harvest.log 2>&1
+/home/vufind/scripts/harvest_from_lat.sh > /home/vufind/logs/harvest.log 2>&1
 rm -Rf /usr/local/vufind/local/harvest/ELARALL/*.log
 
 #Create alphabetic browse index
@@ -51,4 +51,3 @@ chmod 666 /usr/local/vufind/local/cache/covers/large/*
 killall java
 /usr/local/vufind2/vufind.sh restart
 #systemctl restart vufind
-
